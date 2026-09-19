@@ -264,6 +264,7 @@ nav {
     height: 100vh;
     overflow: hidden;
     background-color: var(--color-dark);
+
 }
 
 .hero-carousel {
@@ -271,6 +272,7 @@ nav {
     inset: 0;
     width: 100%;
     height: 100%;
+
 }
 
 .hero-slide {
@@ -280,6 +282,8 @@ nav {
     height: 100%;
     opacity: 0;
     animation: heroCarousel 24s infinite;
+    cursor: none !important;
+
 }
 
 .hero-slide:nth-child(1) {
@@ -923,4 +927,18 @@ nav {
     padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-dark);
     color: var(--color-light);
+}
+
+/*---------------------------Cursor----------------------------------*/
+
+.custom-cursor {
+    position: fixed;
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+    display: none;
 }
