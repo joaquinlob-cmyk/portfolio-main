@@ -266,9 +266,7 @@ if (projectCards.length > 0) {
 
 }
 
-/* =====================================================
-   SMART HEADER / MENU
-===================================================== */
+/*---menu---*/
 
 const header = document.querySelector('.header');
 
@@ -276,11 +274,6 @@ if (header) {
 
     let lastScrollY = window.scrollY;
     let menuOpen = false;
-
-
-    /* ---------------------------------
-       CREAR BOTÓN MENU
-    --------------------------------- */
 
     const menuButton = document.createElement('button');
 
@@ -306,19 +299,9 @@ if (header) {
 
     document.body.appendChild(menuButton);
 
-
-    /* ---------------------------------
-       CREAR MENU
-    --------------------------------- */
-
     const menuOverlay = document.createElement('div');
 
     menuOverlay.className = 'menu-overlay';
-
-
-    /* ---------------------------------
-       COPIAR LINKS DEL HEADER
-    --------------------------------- */
 
     const navigation =
         header.querySelector('.header__nav');
@@ -345,11 +328,6 @@ if (header) {
         });
 
     }
-
-
-    /* ---------------------------------
-       CONTENIDO MENU
-    --------------------------------- */
 
     menuOverlay.innerHTML = `
 
@@ -379,18 +357,8 @@ if (header) {
 
     document.body.appendChild(menuOverlay);
 
-
-    /* ---------------------------------
-       ELEMENTOS
-    --------------------------------- */
-
     const menuClose =
         menuOverlay.querySelector('.menu-close');
-
-
-    /* ---------------------------------
-       ABRIR MENU
-    --------------------------------- */
 
     function openMenu() {
 
@@ -418,11 +386,6 @@ if (header) {
 
     }
 
-
-    /* ---------------------------------
-       CERRAR MENU
-    --------------------------------- */
-
     function closeMenu() {
 
         menuOpen = false;
@@ -449,11 +412,6 @@ if (header) {
 
     }
 
-
-    /* ---------------------------------
-       BOTÓN MENU
-    --------------------------------- */
-
     menuButton.addEventListener(
         'click',
         () => {
@@ -472,10 +430,6 @@ if (header) {
     );
 
 
-    /* ---------------------------------
-       BOTÓN X
-    --------------------------------- */
-
     menuClose.addEventListener(
         'click',
         (event) => {
@@ -488,12 +442,6 @@ if (header) {
 
         }
     );
-
-
-    /* ---------------------------------
-       CERRAR AL HACER CLICK
-       FUERA DEL CONTENIDO
-    --------------------------------- */
 
     menuOverlay.addEventListener(
         'click',
@@ -509,11 +457,6 @@ if (header) {
 
         }
     );
-
-
-    /* ---------------------------------
-       CERRAR AL HACER CLICK EN LINK
-    --------------------------------- */
 
     const overlayLinks =
         menuOverlay.querySelectorAll('a');
@@ -532,22 +475,12 @@ if (header) {
 
     });
 
-
-    /* ---------------------------------
-       SCROLL
-    --------------------------------- */
-
     window.addEventListener(
         'scroll',
         () => {
 
             const currentScrollY =
                 window.scrollY;
-
-
-            /* ---------------------------------
-               ESTAMOS ARRIBA
-            --------------------------------- */
 
             if (currentScrollY <= 20) {
 
@@ -566,11 +499,6 @@ if (header) {
 
             }
 
-
-            /* ---------------------------------
-               BAJANDO
-            --------------------------------- */
-
             if (
                 currentScrollY > lastScrollY &&
                 !menuOpen
@@ -579,27 +507,11 @@ if (header) {
                 header.classList.add(
                     'header--hidden'
                 );
-
-                /*
-                 * AQUÍ ESTABA EL ERROR:
-                 *
-                 * Antes quitábamos
-                 * menu-toggle--visible.
-                 *
-                 * Ahora lo mostramos.
-                 */
-
                 menuButton.classList.add(
                     'menu-toggle--visible'
                 );
 
             }
-
-
-            /* ---------------------------------
-               SUBIENDO
-            --------------------------------- */
-
             if (
                 currentScrollY < lastScrollY &&
                 !menuOpen
@@ -621,12 +533,6 @@ if (header) {
 
         }
     );
-
-
-    /* ---------------------------------
-       ESC
-    --------------------------------- */
-
     document.addEventListener(
         'keydown',
         (event) => {
