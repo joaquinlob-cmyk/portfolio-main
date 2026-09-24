@@ -1,77 +1,129 @@
-const sections = document.querySelectorAll(".gif");
-const heroCarousel = document.querySelector('.hero-carousel')
-const slides = [
-    { nombre: 'Proyecto 1', image: './media/image1.jpg', href: './proyectos.html', cursor: './media/gif1.gif' },
-    { nombre: 'Proyecto 2', image: './media/image2.jpg', href: './proyectos.html', cursor: './media/gif2.gif' },
-    { nombre: 'Proyecto 3', image: './media/image3.jpg', href: './proyectos.html', cursor: './media/gif3.gif' },
-    { nombre: 'Proyecto 4', image: './media/image4.jpg', href: './proyectos.html', cursor: './media/gif4.gif' },
-]
 
-let count = 0
+const heroCarousel = document.querySelector('.hero-carousel');
 
-slides.forEach(slide => {
-    const newSlide = document.createElement('a')
-    newSlide.classList.add('hero-slide', 'gif')
-    newSlide.href = slide.href
-    newSlide.setAttribute('data-cursor', slide.cursor)
-    newSlide.innerHTML = `
-        <img src="${slide.image}" alt="${slide.nombre}">    
-    `
-    newSlide.style.display = 'none'
-    heroCarousel.appendChild(newSlide)
-})
+if (heroCarousel) {
 
-let heroSlide = document.querySelectorAll('.hero-slide')
-heroSlide[0].style.display = 'block'
+    const slides = [
+        {
+            nombre: 'Proyecto 1',
+            image: './media/image1.jpg',
+            href: './proyectos.html',
+            cursor: './media/gif1.gif'
+        },
+        {
+            nombre: 'Proyecto 2',
+            image: './media/image2.jpg',
+            href: './proyectos.html',
+            cursor: './media/gif2.gif'
+        },
+        {
+            nombre: 'Proyecto 3',
+            image: './media/image3.jpg',
+            href: './proyectos.html',
+            cursor: './media/gif3.gif'
+        },
+        {
+            nombre: 'Proyecto 4',
+            image: './media/image4.jpg',
+            href: './proyectos.html',
+            cursor: './media/gif4.gif'
+        }
+    ];
 
-setInterval(() => {
-    if (count < slides.length - 1) {
-        heroSlide[count].style.display = 'none'
-        count++
-        heroSlide[count].style.display = 'block'
-    } else {
-        heroSlide[count].style.display = 'none'
-        count = 0
-        heroSlide[count].style.display = 'block'
+    let count = 0;
+
+    slides.forEach(slide => {
+
+        const newSlide = document.createElement('a');
+
+        newSlide.classList.add('hero-slide', 'gif');
+
+        newSlide.href = slide.href;
+
+        newSlide.setAttribute('data-cursor', slide.cursor);
+
+        newSlide.innerHTML = `
+            <img src="${slide.image}" alt="${slide.nombre}">
+        `;
+
+        newSlide.style.display = 'none';
+
+        heroCarousel.appendChild(newSlide);
+
+    });
+
+
+    const heroSlides = document.querySelectorAll('.hero-slide');
+
+    if (heroSlides.length > 0) {
+
+        heroSlides[0].style.display = 'block';
+
+
+        setInterval(() => {
+
+            heroSlides[count].style.display = 'none';
+
+            count++;
+
+            if (count >= heroSlides.length) {
+                count = 0;
+            }
+
+            heroSlides[count].style.display = 'block';
+
+        }, 3000);
+
+
+        /* Custom cursor */
+
+        const cursor = document.createElement('img');
+
+        cursor.classList.add('custom-cursor');
+
+        document.body.appendChild(cursor);
+
+
+        heroSlides.forEach(slide => {
+
+            slide.addEventListener('mouseenter', () => {
+
+                cursor.src = slide.dataset.cursor;
+
+                cursor.style.display = 'block';
+
+            });
+
+
+            slide.addEventListener('mousemove', (event) => {
+
+                cursor.style.left = `${event.clientX}px`;
+
+                cursor.style.top = `${event.clientY}px`;
+
+            });
+
+
+            slide.addEventListener('mouseleave', () => {
+
+                cursor.style.display = 'none';
+
+            });
+
+        });
+
     }
 
-    console.log(count)
-}, 3000)
+}
 
-const cursor = document.createElement("img");
-cursor.classList.add("custom-cursor");
 
-document.body.appendChild(cursor);
-
-heroSlide.forEach(slide => {
-
-    slide.addEventListener("mouseenter", () => {
-        cursor.src = slide.dataset.cursor;
-        cursor.style.display = "block";
-    });
-
-    slide.addEventListener("mousemove", (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-    });
-
-    slide.addEventListener("mouseleave", () => {
-        cursor.style.display = "none";
-    });
-
-});
-
-/*POPUPS*/
-
-/* =========================
-   PROJECT POPUP
-========================= */
+/*---POPUPS---*/
 
 const projectCards = document.querySelectorAll('.projects-page__card');
 
+
 if (projectCards.length > 0) {
 
-    // Información de cada proyecto
     const projectDescriptions = [
         'Descripción del proyecto 01. Aquí puedes explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
@@ -87,21 +139,33 @@ if (projectCards.length > 0) {
     ];
 
 
-    // Crear el popup automáticamente
     const projectModal = document.createElement('div');
 
     projectModal.classList.add('project-modal');
 
+
     projectModal.innerHTML = `
+
         <div class="project-modal__content">
 
-            <button class="project-modal__close" aria-label="Cerrar">
-                &times;
+            <button
+                class="project-modal__close"
+                aria-label="Cerrar proyecto"
+            >
+                ×
             </button>
 
+
             <div class="project-modal__image-container">
-                <img class="project-modal__image" src="" alt="">
+
+                <img
+                    class="project-modal__image"
+                    src=""
+                    alt=""
+                >
+
             </div>
+
 
             <div class="project-modal__info">
 
@@ -112,40 +176,55 @@ if (projectCards.length > 0) {
             </div>
 
         </div>
+
     `;
 
 
-    // Añadir popup al body
     document.body.appendChild(projectModal);
 
+    const modalImage =
+        projectModal.querySelector('.project-modal__image');
 
-    // Elementos del popup
-    const modalImage = projectModal.querySelector('.project-modal__image');
-    const modalTitle = projectModal.querySelector('.project-modal__title');
-    const modalDescription = projectModal.querySelector('.project-modal__description');
-    const closeButton = projectModal.querySelector('.project-modal__close');
+    const modalTitle =
+        projectModal.querySelector('.project-modal__title');
 
+    const modalDescription =
+        projectModal.querySelector('.project-modal__description');
 
-    // Abrir popup
+    const closeButton =
+        projectModal.querySelector('.project-modal__close');
+
     projectCards.forEach((card, index) => {
 
         card.addEventListener('click', (event) => {
 
             event.preventDefault();
 
+
             const image = card.querySelector('img');
+
             const title = card.querySelector('h2');
 
+
+            if (!image || !title) {
+                return;
+            }
+
+
             modalImage.src = image.src;
+
             modalImage.alt = image.alt;
 
             modalTitle.textContent = title.textContent;
+
 
             modalDescription.textContent =
                 projectDescriptions[index] ||
                 'Descripción del proyecto.';
 
+
             projectModal.classList.add('is-open');
+
 
             document.body.style.overflow = 'hidden';
 
@@ -153,8 +232,6 @@ if (projectCards.length > 0) {
 
     });
 
-
-    // Cerrar con X
     closeButton.addEventListener('click', () => {
 
         projectModal.classList.remove('is-open');
@@ -163,8 +240,6 @@ if (projectCards.length > 0) {
 
     });
 
-
-    // Cerrar haciendo click fuera
     projectModal.addEventListener('click', (event) => {
 
         if (event.target === projectModal) {
@@ -177,8 +252,6 @@ if (projectCards.length > 0) {
 
     });
 
-
-    // Cerrar con ESC
     document.addEventListener('keydown', (event) => {
 
         if (event.key === 'Escape') {
@@ -193,3 +266,381 @@ if (projectCards.length > 0) {
 
 }
 
+/* =====================================================
+   SMART HEADER / MENU
+===================================================== */
+
+const header = document.querySelector('.header');
+
+if (header) {
+
+    let lastScrollY = window.scrollY;
+    let menuOpen = false;
+
+
+    /* ---------------------------------
+       CREAR BOTÓN MENU
+    --------------------------------- */
+
+    const menuButton = document.createElement('button');
+
+    menuButton.className = 'menu-toggle';
+
+    menuButton.type = 'button';
+
+    menuButton.setAttribute(
+        'aria-label',
+        'Abrir menú'
+    );
+
+    menuButton.setAttribute(
+        'aria-expanded',
+        'false'
+    );
+
+    menuButton.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+
+    document.body.appendChild(menuButton);
+
+
+    /* ---------------------------------
+       CREAR MENU
+    --------------------------------- */
+
+    const menuOverlay = document.createElement('div');
+
+    menuOverlay.className = 'menu-overlay';
+
+
+    /* ---------------------------------
+       COPIAR LINKS DEL HEADER
+    --------------------------------- */
+
+    const navigation =
+        header.querySelector('.header__nav');
+
+    let menuLinks = '';
+
+
+    if (navigation) {
+
+        const links =
+            navigation.querySelectorAll('a');
+
+
+        links.forEach(link => {
+
+            menuLinks += `
+                <li>
+                    <a href="${link.getAttribute('href')}">
+                        ${link.textContent.trim()}
+                    </a>
+                </li>
+            `;
+
+        });
+
+    }
+
+
+    /* ---------------------------------
+       CONTENIDO MENU
+    --------------------------------- */
+
+    menuOverlay.innerHTML = `
+
+        <div class="menu-overlay__content">
+
+            <button
+                type="button"
+                class="menu-close"
+                aria-label="Cerrar menú"
+            >
+                ×
+            </button>
+
+
+            <nav class="menu-overlay__nav">
+
+                <ul>
+                    ${menuLinks}
+                </ul>
+
+            </nav>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(menuOverlay);
+
+
+    /* ---------------------------------
+       ELEMENTOS
+    --------------------------------- */
+
+    const menuClose =
+        menuOverlay.querySelector('.menu-close');
+
+
+    /* ---------------------------------
+       ABRIR MENU
+    --------------------------------- */
+
+    function openMenu() {
+
+        menuOpen = true;
+
+        menuOverlay.classList.add(
+            'menu-overlay--open'
+        );
+
+        menuButton.classList.add(
+            'menu-toggle--active'
+        );
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            'true'
+        );
+
+        menuButton.setAttribute(
+            'aria-label',
+            'Cerrar menú'
+        );
+
+        document.body.style.overflow = 'hidden';
+
+    }
+
+
+    /* ---------------------------------
+       CERRAR MENU
+    --------------------------------- */
+
+    function closeMenu() {
+
+        menuOpen = false;
+
+        menuOverlay.classList.remove(
+            'menu-overlay--open'
+        );
+
+        menuButton.classList.remove(
+            'menu-toggle--active'
+        );
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+        menuButton.setAttribute(
+            'aria-label',
+            'Abrir menú'
+        );
+
+        document.body.style.overflow = '';
+
+    }
+
+
+    /* ---------------------------------
+       BOTÓN MENU
+    --------------------------------- */
+
+    menuButton.addEventListener(
+        'click',
+        () => {
+
+            if (menuOpen) {
+
+                closeMenu();
+
+            } else {
+
+                openMenu();
+
+            }
+
+        }
+    );
+
+
+    /* ---------------------------------
+       BOTÓN X
+    --------------------------------- */
+
+    menuClose.addEventListener(
+        'click',
+        (event) => {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeMenu();
+
+        }
+    );
+
+
+    /* ---------------------------------
+       CERRAR AL HACER CLICK
+       FUERA DEL CONTENIDO
+    --------------------------------- */
+
+    menuOverlay.addEventListener(
+        'click',
+        (event) => {
+
+            if (
+                event.target === menuOverlay
+            ) {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+    /* ---------------------------------
+       CERRAR AL HACER CLICK EN LINK
+    --------------------------------- */
+
+    const overlayLinks =
+        menuOverlay.querySelectorAll('a');
+
+
+    overlayLinks.forEach(link => {
+
+        link.addEventListener(
+            'click',
+            () => {
+
+                closeMenu();
+
+            }
+        );
+
+    });
+
+
+    /* ---------------------------------
+       SCROLL
+    --------------------------------- */
+
+    window.addEventListener(
+        'scroll',
+        () => {
+
+            const currentScrollY =
+                window.scrollY;
+
+
+            /* ---------------------------------
+               ESTAMOS ARRIBA
+            --------------------------------- */
+
+            if (currentScrollY <= 20) {
+
+                header.classList.remove(
+                    'header--hidden'
+                );
+
+                menuButton.classList.remove(
+                    'menu-toggle--visible'
+                );
+
+                lastScrollY =
+                    currentScrollY;
+
+                return;
+
+            }
+
+
+            /* ---------------------------------
+               BAJANDO
+            --------------------------------- */
+
+            if (
+                currentScrollY > lastScrollY &&
+                !menuOpen
+            ) {
+
+                header.classList.add(
+                    'header--hidden'
+                );
+
+                /*
+                 * AQUÍ ESTABA EL ERROR:
+                 *
+                 * Antes quitábamos
+                 * menu-toggle--visible.
+                 *
+                 * Ahora lo mostramos.
+                 */
+
+                menuButton.classList.add(
+                    'menu-toggle--visible'
+                );
+
+            }
+
+
+            /* ---------------------------------
+               SUBIENDO
+            --------------------------------- */
+
+            if (
+                currentScrollY < lastScrollY &&
+                !menuOpen
+            ) {
+
+                header.classList.add(
+                    'header--hidden'
+                );
+
+                menuButton.classList.add(
+                    'menu-toggle--visible'
+                );
+
+            }
+
+
+            lastScrollY =
+                currentScrollY;
+
+        }
+    );
+
+
+    /* ---------------------------------
+       ESC
+    --------------------------------- */
+
+    document.addEventListener(
+        'keydown',
+        (event) => {
+
+            if (
+                event.key === 'Escape' &&
+                menuOpen
+            ) {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+}
