@@ -63,7 +63,7 @@ img {
     display: inline-block;
     max-width: 100%;
     width: 100%;
-    border-radius: var(--radius-sm);
+    
 }
 
 a {
@@ -389,6 +389,7 @@ nav {
     font: var(--font-xl);
     color: var(--color-light);
     margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-xxl);
 }
 
 .project-cards {
@@ -400,7 +401,7 @@ nav {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: var(--radius-sm);
+    
 }
 
 .project-cards__image img {
@@ -453,6 +454,9 @@ nav {
 }
 
 .about__content {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--spacing-xl);
@@ -461,14 +465,18 @@ nav {
 
 .about__image {
     width: 100%;
+    bottom: 0;
+    left: 0;
 }
 
 .about__image img {
+    max-width: 300px;
     width: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
-    border-radius: var(--radius-sm);
+    border-radius: none;
+    
 }
 
 .about__text {
@@ -482,7 +490,6 @@ nav {
 
 .education {
     margin-top: var(--spacing-xxl);
-    border-top: 2px solid var(--color-light);
 }
 
 .education__title {
@@ -933,8 +940,8 @@ nav {
 
 .custom-cursor {
     position: fixed;
-    width: 10rem;
-    height: 10rem;
+    width: 15rem;
+    height: 15rem;
     object-fit: contain;
     pointer-events: none;
     z-index: 9999;
