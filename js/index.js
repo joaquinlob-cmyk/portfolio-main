@@ -6,27 +6,27 @@ if (heroCarousel) {
     const slides = [
         {
             nombre: 'Proyecto 1',
-            image: './media/image1.jpg',
+            image: './media/WEBP/image1.webp',
             href: './proyectos.html',
-            cursor: './media/gif1.gif'
+            cursor: './media/GIFs/gif1.gif'
         },
         {
             nombre: 'Proyecto 2',
-            image: './media/image2.jpg',
+            image: './media/WEBP/image2.webp',
             href: './proyectos.html',
-            cursor: './media/gif2.gif'
+            cursor: './media/GIFs/gif2.gif'
         },
         {
             nombre: 'Proyecto 3',
-            image: './media/image3.jpg',
+            image: './media/WEBP/image3.webp',
             href: './proyectos.html',
-            cursor: './media/gif3.gif'
+            cursor: './media/GIFs/gif3.gif'
         },
         {
             nombre: 'Proyecto 4',
-            image: './media/image4.jpg',
+            image: './media/WEBP/image4.webp',
             href: './proyectos.html',
-            cursor: './media/gif4.gif'
+            cursor: './media/GIFs/gif4.gif'
         }
     ];
 

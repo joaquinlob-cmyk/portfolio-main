@@ -108,6 +108,7 @@ h4,
 .title-sm {
     font: var(--font-sm);
 }
+
 h5,
 .title-sm-italic {
     font: var(--font-sm-italic);
