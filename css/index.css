@@ -108,7 +108,7 @@ h4,
 .title-sm {
     font: var(--font-sm);
 }
-
+h5,
 .title-sm-italic {
     font: var(--font-sm-italic);
 }
@@ -1187,8 +1187,8 @@ nav {
     position: relative;
     display: inline-block;
     color: var(--color-light);
-    font: var(--font-lg);
-    line-height: 0.85;
+    font: var(--font-xl);
+    line-height: 1.2;
     letter-spacing: -0.05em;
     transition:
         color 0.3s ease,
