@@ -125,17 +125,17 @@ const projectCards = document.querySelectorAll('.projects-page__card');
 if (projectCards.length > 0) {
 
     const projectDescriptions = [
-        'Descripción del proyecto 01. Aquí puedes explicar brevemente el concepto, el proceso y las características principales del proyecto.',
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
-        'Descripción del proyecto 02. Aquí puedes explicar el objetivo del proyecto y las decisiones tomadas durante su desarrollo.',
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
-        'Descripción del proyecto 03. Aquí puedes explicar el proceso creativo y el resultado final.',
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
-        'Descripción del proyecto 04. Aquí puedes explicar las herramientas utilizadas y las características del proyecto.',
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
-        'Descripción del proyecto 05. Aquí puedes explicar el concepto y el desarrollo del proyecto.',
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
 
-        'Descripción del proyecto 06. Aquí puedes explicar brevemente el proyecto y sus objetivos.'
+        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.'
     ];
 
 

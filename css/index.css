@@ -3,7 +3,7 @@
     /* Colors */
     --color-dark: #1A1C1C;
     --color-light: #F3F3F3;
-    --color-red: #BC0100;
+    --color-red: #a11d1d;
     --color-grey: #DADADA;
 
     /* Fonts */
@@ -1158,6 +1158,7 @@ nav {
 
 .menu-close {
 
+    opacity: 0%;
     position: absolute;
     top: var(--spacing-md);
     right: var(--spacing-md);
@@ -1187,8 +1188,8 @@ nav {
     position: relative;
     display: inline-block;
     color: var(--color-light);
-    font: var(--font-lg);
-    line-height: 0.85;
+    font: var(--font-xl);
+    line-height: 1.1;
     letter-spacing: -0.05em;
     transition:
         color 0.3s ease,
