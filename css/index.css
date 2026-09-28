@@ -319,6 +319,7 @@ nav {
 /* Pojects */
 
 .projects {
+    max-width: 100%;
    display: flex;
    flex-direction: column;
    width: 100%;
@@ -326,7 +327,7 @@ nav {
 }
 
 .projects__block {
-    border: solid ;
+    max-width: 90%;
 }
 
 .projects__title {
@@ -338,8 +339,9 @@ nav {
 }
 
 .project__cards {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 1rem;
 }
 
 .project__card {
@@ -386,69 +388,71 @@ nav {
 
 /* Projects */
 
+/* About */
+
+
 .about {
     width: 100%;
     padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-red);
     color: var(--color-light);
-    border: 2px solid;
+}
+.about__block {
+    max-width: ;
+    display: flex;
+    flex-direction: column;
+    border: solid;
 }
 
 .about__header {
-    width: 100%;
     margin-bottom: var(--spacing-xl);
-}
 
-.about__header h2 {
+    & h2 {
     font: var(--font-xl);
     line-height: 0.85;
+    }
 }
 
+
 .about__content {
+    max-width: 100%;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-xl);
     align-items: center;
-    border: 2px solid white;
+    border: 1px solid;
 }
 
 .about__image {
     width: 100%;
-    bottom: 0;
-    left: 0;
-}
 
-.about__image img {
+    & img {
     max-width: 300px;
-    width: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    display: block;
-    border-radius: none;
     
+    }
 }
 
 .about__text {
     max-width: 45rem;
-}
 
-.about__text p {
+    & p {
     font: var(--font-md);
     margin-bottom: var(--spacing-lg);
+    }
 }
 
-.education {
+.about__education {
     margin-top: var(--spacing-xxl);
 }
 
-.education__title {
+.about__education-title {
     padding: var(--spacing-md) 0 var(--spacing-lg);
     font: var(--font-lg);
 }
 
-.education__item {
+.about__education-item {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: var(--spacing-lg);
@@ -456,18 +460,20 @@ nav {
     border-top: 1px solid var(--color-light);
 }
 
-.education__institution h3 {
+.about__education-institution h3 {
     font: var(--font-md);
 }
 
-.education__institution p,
-.education__item time {
+.about__education-institution p,
+.about__education-item time {
     font: var(--font-sm);
 }
 
-.education__item time {
+.about__education-item time {
     white-space: nowrap;
 }
+
+/* About */
 
 .contact {
     display: grid;

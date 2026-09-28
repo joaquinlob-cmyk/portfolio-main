@@ -71,6 +71,7 @@ if (heroCarousel) {
             }
 
             heroSlides[count].style.display = 'block';
+           // cursor.src = heroSlides[count].dataset.cursor;//
 
         }, 3000);
 
