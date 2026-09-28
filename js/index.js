@@ -1,5 +1,5 @@
 
-const heroCarousel = document.querySelector('.hero-carousel');
+const heroCarousel = document.querySelector('.hero__carrousel');
 
 if (heroCarousel) {
 
@@ -36,7 +36,7 @@ if (heroCarousel) {
 
         const newSlide = document.createElement('a');
 
-        newSlide.classList.add('hero-slide', 'gif');
+        newSlide.classList.add('hero__slide', 'gif');
 
         newSlide.href = slide.href;
 
@@ -53,7 +53,7 @@ if (heroCarousel) {
     });
 
 
-    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroSlides = document.querySelectorAll('.hero__slide');
 
     if (heroSlides.length > 0) {
 
@@ -117,7 +117,7 @@ if (heroCarousel) {
 }
 
 
-/*---POPUPS---*/
+/*---Popups---*/
 
 const projectCards = document.querySelectorAll('.projects-page__card');
 

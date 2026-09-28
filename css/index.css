@@ -254,9 +254,7 @@ nav {
 /* Header */ 
 
 
-/* =========================
-   HERO
-========================= */
+/* Hero */
 
 .hero {
     position: relative;
@@ -267,7 +265,7 @@ nav {
 
 }
 
-.hero-carousel {
+.hero__carrousel {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -275,7 +273,7 @@ nav {
 
 }
 
-.hero-slide {
+.hero__slide {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -283,64 +281,52 @@ nav {
     /*opacity: 0;*/
     cursor: none !important;
 
-}
-
-.hero-slide img {
+    & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     border-radius: 0;
+    }
 }
 
-.hero-content {
+.hero__content {
     position: absolute;
     z-index: 10;
     left: var(--spacing-lg);
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-}
 
-.hero-content h1 {
+    & h1 {
     color: var(--color-light);
     font: var(--font-xl);
     line-height: 0.82;
     letter-spacing: -0.06em;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-}
+    }
 
-.hero-content h2 {
+    & h2 {
     margin-top: var(--spacing-md);
     color: var(--color-light);
     font: var(--font-lg);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 640px) {
-
-    .hero {
-        height: 100svh;
     }
-
-    .hero-content {
-        left: var(--spacing-md);
-    }
-
-    .hero-content h1 {
-        font-size: clamp(4rem, 16vw, 6rem);
-    }
-
 }
 
 /* Hero */
 
+/* Pojects */
+
 .projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-    padding: var(--spacing-xxl) var(--spacing-md);
-    width: 100%;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+
+}
+
+.projects__block {
+    border: solid ;
 }
 
 .projects__title {
@@ -351,27 +337,46 @@ nav {
     gap: var(--spacing-xxl);
 }
 
-.project-cards {
+.project__cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.project__card {
     display: block;
     width: 100%;
 }
 
-.project-cards__image {
+.project__card-image {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     
-}
-
-.project-cards__image img {
+    & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     border-radius: 0;
+    }
+
+    & h2 {
+    font: var(--font-xs);
+    line-height: 1;
+    }
+
+    & p {
+    font: var(--font-xs);
+    line-height: 1;
+    }
+    & span {
+    font: var(--font-xs);
+    line-height: 1;
+    white-space: nowrap;
+    }
 }
 
-.project-cards__info {
+.project__card-info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -379,21 +384,7 @@ nav {
     padding-top: var(--spacing-sm);
 }
 
-.project-cards__info h2 {
-    font: var(--font-xs);
-    line-height: 1;
-}
-
-.project-cards__info p {
-    font: var(--font-xs);
-    line-height: 1;
-}
-
-.project-cards__info span {
-    font: var(--font-xs);
-    line-height: 1;
-    white-space: nowrap;
-}
+/* Projects */
 
 .about {
     width: 100%;
