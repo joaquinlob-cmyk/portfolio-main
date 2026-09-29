@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto — Portfolio</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <!--/ Header-->
@@ -29,67 +33,52 @@
 <main>
 
         <!--/ Contact-->
-        <section class="contact">
+        <section class="contact section">
+            <div class="contact__block">
+                <div class="contact__info">
 
-            <div class="contact__info">
+                    <h2>Contacto</h2>
 
-                <h2>Contacto</h2>
-
-                <div class="contact__details">
-                    <p>joaquin.lob@gmail.com</p>
-                    <p>+34 673 238 809</p>
-                    <p>Valencia — España</p>
+                    <div class="contact__details">
+                        <p>joaquin.lob@gmail.com</p>
+                        <p>+34 673 238 809</p>
+                        <p>Valencia — España</p>
+                    </div>
                 </div>
-
-            </div>
-
-
-            <div class="contact__form">
-
-                <p class="contact__intro">
-                    ¿Tienes un proyecto en mente? ¡Hablemos!
-                </p>
-
-                <form>
-
-                    <div class="contact__row">
-
-                        <div class="contact__field">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" placeholder="Nombre">
+                <div class="contact__form">
+                    <p class="contact__intro">
+                        ¿Tienes un proyecto en mente? ¡Hablemos!
+                    </p>
+                    <form>
+                        <div class="contact__row">
+                            <div class="contact__field">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre">
+                            </div>
+                            <div class="contact__field">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="Correo electrónico">
+                            </div>
                         </div>
-
                         <div class="contact__field">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="Correo electrónico">
+                            <label for="subject">Asunto</label>
+                            <input id="subject" type="text" name="subject" placeholder="Asunto" />
                         </div>
-
-                    </div>
-                    <div class="contact__field">
-                        <label for="subject">Asunto</label>
-                        <input id="subject" type="text" name="subject" placeholder="Asunto" />
-                    </div>
-
-
-                    <div class="contact__field">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" placeholder="Mensaje"></textarea>
-                    </div>
-                    <label class="contact__acceptance">
-                        <input type="checkbox" name="acceptance" />
-                        He leído y acepto la política de privacidad
-                    </label>
-
-                    <button type="submit" class="btn btn--light">
-                        Enviar
-                    </button>
-
-                </form>
-
+                        <div class="contact__field">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Mensaje"></textarea>
+                        </div>
+                        <label class="contact__acceptance">
+                            <input type="checkbox" name="acceptance" />
+                            He leído y acepto la política de privacidad
+                        </label>
+                        <button type="submit" class="btn btn--light">
+                            Enviar
+                        </button>
+                    </form>
+                </div>
             </div>
-
         </section>
-
 </main>
 
 <!-- Footer -->
