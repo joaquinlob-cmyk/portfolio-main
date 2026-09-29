@@ -27,6 +27,8 @@
 
     --size-max-width: 60.25rem;
     --size-max-widht-xl: 90rem;
+    --size-max-widht-2xl: 90%;
+    --size-max-widht-3xl: 280rem;   
 
     --size-min-width-sm: 13.125rem;
     --size-min-width: 20rem;
@@ -132,14 +134,14 @@ label:not([for="acceptance"]) {
 }
 
 .block {
-    max-width: var(--size-max-width);
+    max-width: 90%;
     margin: 0 auto;
     width: 100%;
 }
 
 .section {
     padding: var(--spacing-xxl) var(--spacing-md);
-    max-width: var(--size-max-width);
+    max-width: var(--size-max-widht-3xl);
     margin: 0 auto;
 
     animation: fadein 1s linear 1 forwards;
@@ -163,6 +165,7 @@ label:not([for="acceptance"]) {
 
 
     &.form-field--acceptance {
+
         display: flex;
         justify-content: start;
         align-items: center;
@@ -319,15 +322,11 @@ nav {
 /* Pojects */
 
 .projects {
-    max-width: 100%;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
 
 }
 
 .projects__block {
-    max-width: 90%;
+
 }
 
 .projects__title {
@@ -345,12 +344,10 @@ nav {
 }
 
 .project__card {
-    display: block;
-    width: 100%;
+    
 }
 
 .project__card-image {
-    width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     
@@ -392,16 +389,15 @@ nav {
 
 
 .about {
-    width: 100%;
-    padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-red);
     color: var(--color-light);
 }
+
 .about__block {
-    max-width: ;
     display: flex;
     flex-direction: column;
     border: solid;
+
 }
 
 .about__header {
@@ -415,8 +411,8 @@ nav {
 
 
 .about__content {
-    max-width: 100%;
-    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
