@@ -232,7 +232,7 @@ header {
     top: 0;
     z-index: 1;
     isolation: isolate;
-    background-color: rgba(26, 28, 28, 0.75);
+    background-color: var(--color-dark);
     color: var(--color-light);
 }
 
@@ -276,9 +276,14 @@ nav {
     overflow: hidden;
     background-color: var(--color-dark);
 
+    z-index: 0;
+    position: sticky;
+    top: 4rem;
+    
 }
 
-.hero__block {
+
+.hero__block  {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -333,9 +338,15 @@ nav {
 
 /* Hero */
 
+.full-frame {
+    position: relative;
+    z-index: 1;
+}
+
 /* Pojects */
 
 .projects {
+    background-color: var(--color-dark);
 
 }
 
