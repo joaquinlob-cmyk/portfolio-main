@@ -27,7 +27,7 @@
 
     --size-max-width: 60.25rem;
     --size-max-widht-xl: 90rem;
-    --size-max-widht-2xl: 90%;
+    --size-max-widht-2xl: 152.5rem;
     --size-max-widht-3xl: 280rem;   
 
     --size-min-width-sm: 13.125rem;
@@ -146,10 +146,12 @@ label:not([for="acceptance"]) {
     padding: var(--spacing-xxl) var(--spacing-md);
     width: 100%;
     margin: 0 auto;
+}
 
-    animation: fadein 1s linear 1 forwards;
-    animation-timeline: view(block 60% 10%);
-
+.section-0 {
+    padding: 1px var(--spacing-md);
+    width: 100%;
+    margin: 0 auto;
 }
 
 .form-row {
@@ -277,9 +279,8 @@ nav {
     background-color: var(--color-dark);
 
     z-index: 0;
-    position: sticky;
-    top: 4rem;
-    
+    position: sticky;   
+    top: 0; 
 }
 
 
@@ -304,7 +305,7 @@ nav {
     width: 100%;
     height: 100%;
     /*opacity: 0;*/
-    cursor: none !important;
+    cursor: none ;
 
     & img {
     width: 100%;
@@ -348,6 +349,7 @@ nav {
 .projects {
     background-color: var(--color-dark);
 
+
 }
 
 .projects__block {
@@ -355,11 +357,10 @@ nav {
 }
 
 .projects__title {
-    grid-column: 1 / -1;
     font: var(--font-xl);
     color: var(--color-light);
-    margin-bottom: var(--spacing-lg);
-    gap: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xxl);
+
 }
 
 .project__cards {
@@ -425,7 +426,7 @@ nav {
 }
 
 .about__header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
 
     & h2 {
     font: var(--font-xl);
@@ -438,23 +439,28 @@ nav {
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 1rem;
 }
 
 .about__image {
-    max-width: 300px;
-    min-width: 300px;
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
 
     & img {
     aspect-ratio: 3 / 4;
     object-fit: cover;
+    max-width: 300px;
+    min-width: 300px;
+
     
     }
 }
 
 .about__text {
-    padding: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -602,20 +608,16 @@ nav {
 /* Footer */
 
 .footer {
-    border-top: 2px solid var(--color-light);
     
 }
 
 .footer__block {
+    border-top: 1px solid var(--color-light);
+
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 3fr;
     gap: var(--spacing-lg);
-
     padding: var(--spacing-lg) 0 var(--spacing-xxl);
-
-
-    background-color: var(--color-dark);
-    color: var(--color-light);
 
     & p, a {
     font: var(--font-sm);
@@ -670,9 +672,9 @@ nav {
 /*-------------------- Contact page --------------------*/
 
 .contact-page {
-    height: 80vh;
     display: flex;
     align-items: center;
+    
 }
 
 .contact-page__block {
@@ -681,7 +683,21 @@ nav {
     justify-content: space-between;
     align-items: center;
 
+    
+
 }
+
+.contact-page__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50rem;
+
+}
+
+
+
+
 
 /*-------------------- Contact page --------------------*/
 
@@ -689,8 +705,8 @@ nav {
 
 
 .projects-page {
-    padding-bottom: var(--spacing-xxl);
     background-color: var(--color-dark);
+    margin-bottom: var(--spacing-xxl);
 }
 
 .projects-page__grid {
@@ -738,9 +754,7 @@ nav {
     transition: .5s;
 }
 
-/* =========================
-   SERVICES PAGE
-========================= */
+/*-------------------- Services page --------------------*/
 
 .services-page {
     width: 100%;
@@ -775,11 +789,11 @@ nav {
     min-height: 10rem;
     padding: var(--spacing-md) 0;
 
-    border-top: 2px solid var(--color-light);
+    border-top: 1px solid var(--color-light);
 }
 
 .service:last-child {
-    border-bottom: 2px solid var(--color-light);
+    border-bottom: 1px solid var(--color-light);
 }
 
 .service__title h2 {
@@ -804,10 +818,9 @@ nav {
     font-size: 5rem;
     line-height: 1;
 }
+/*-------------------- Services page --------------------*/
 
-/* =========================
-   ABOUT
-========================= */
+/*-------------------- About page --------------------*/
 
 .about-page {
     width: 100%;
@@ -815,6 +828,8 @@ nav {
     background-color: var(--color-dark);
     color: var(--color-light);
 }
+
+/*-------------------- About page --------------------*/
 
 /*---------------------------Cursor----------------------------------*/
 
@@ -835,7 +850,7 @@ nav {
 .project-modal {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 4;
     display: flex;
     align-items: center;
     justify-content: center;
