@@ -11,14 +11,16 @@
     --font-hero: 400 clamp(12rem, 5vw, 13rem) "Bebas Neue", sans-serif;
 
 
-    --font-xl: 400 clamp(5rem, 5vw, 5.625rem) "Bebas Neue", sans-serif;
+    --font-xxl: 400 clamp(5rem, 5vw, 5.625rem) "Bebas Neue", sans-serif;
+    --font-xl: 400 clamp(3rem, 5vw, 4rem) "Bebas Neue", sans-serif;
     --font-lg: 400 clamp(1.5rem, 5vw, 2rem) "Bebas Neue", sans-serif;
     --font-md: 400 clamp(1.1875rem, 5vw, 1.5rem) "Bebas Neue", sans-serif;
     --font-sm: 400 clamp(.0625rem, 5vw, 1.1875rem) "Bebas Neue", sans-serif;
     --font-xs: 400 clamp(.875rem, 5vw, 1rem) "Bebas Neue", sans-serif;
 
 
-    --font-xl-saira: 400 clamp(3rem, 5vw, 4rem) "Saira Condensed", sans-serif;
+    --font-xxl-saira: 400 clamp(3rem, 5vw, 4rem) "Saira Condensed", sans-serif;
+    --font-xl-saira: 400 clamp(2.0625rem, 5vw, 2.9375rem) "Saira Condensed", sans-serif;
     --font-lg-saira: 400 clamp(1.5rem, 5vw, 2rem) "Saira Condensed", sans-serif;
     --font-md-saira: 400 clamp(1.1875rem, 5vw, 1.5rem) "Saira Condensed", sans-serif;
     --font-sm-saira: 400 clamp(.0625rem, 5vw, 1.1875rem) "Saira Condensed", sans-serif;
@@ -319,13 +321,13 @@ nav {
     font: var(--font-hero);
     line-height: 0.82;
     letter-spacing: -0.06em;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    text-shadow: 9px 9px 8px rgba(0, 0, 0, 0.6);
     }
 
     & h2 {
     color: var(--color-light);
     font: var(--font-lg-saira);
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
     }
 }
 
@@ -336,13 +338,53 @@ nav {
     z-index: 1;
 }
 
-/* Pojects */
+/* Marquee */
 
 .marquee {
-    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
-    font: var(--font-xl-saira);
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(
+    to top,
+    var(--color-dark),
+    transparent 100%
+    );
 }
+
+.marquee__block {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+}
+
+.marquee__text {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &  span {
+        display: inline-block;
+        flex-shrink: 0;
+        padding-right: 2.5rem;
+
+        font: var(--font-xl-saira);
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+    }
+}
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+}
+
+/* Marquee */
+
+/* Pojects */
 
 .projects {
     background-color: var(--color-dark);
