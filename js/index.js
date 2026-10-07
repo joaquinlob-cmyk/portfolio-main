@@ -8,113 +8,79 @@ if (heroCarousel) {
             nombre: 'Proyecto 1',
             image: './media/image-1.avif',
             href: './proyectos.html',
-            cursor: './media/gif1.gif'
+            cursor: './media/gif-1.gif'
         },
         {
             nombre: 'Proyecto 2',
             image: './media/image-2.avif',
             href: './proyectos.html',
-            cursor: './media/gif2.gif'
+            cursor: './media/gif-2.gif'
         },
         {
             nombre: 'Proyecto 3',
             image: './media/image-3.avif',
             href: './proyectos.html',
-            cursor: './media/gif3.gif'
+            cursor: './media/gif-3.gif'
         },
         {
             nombre: 'Proyecto 4',
             image: './media/image-4.avif',
             href: './proyectos.html',
-            cursor: './media/gif4.gif'
+            cursor: './media/gif-4.gif'
         }
     ];
 
     let count = 0;
 
     slides.forEach(slide => {
-
         const newSlide = document.createElement('a');
-
         newSlide.classList.add('hero__slide', 'gif');
-
         newSlide.href = slide.href;
-
         newSlide.setAttribute('data-cursor', slide.cursor);
-
         newSlide.innerHTML = `
             <img src="${slide.image}" alt="${slide.nombre}">
         `;
-
         newSlide.style.display = 'none';
-
         heroCarousel.appendChild(newSlide);
-
     });
 
-
     const heroSlides = document.querySelectorAll('.hero__slide');
-
     if (heroSlides.length > 0) {
-
         heroSlides[0].style.display = 'block';
 
-
         setInterval(() => {
-
             heroSlides[count].style.display = 'none';
-
             count++;
-
             if (count >= heroSlides.length) {
                 count = 0;
             }
-
             heroSlides[count].style.display = 'block';
-           // cursor.src = heroSlides[count].dataset.cursor;//
-
+            // cursor.src = heroSlides[count].dataset.cursor;//
         }, 3000);
-
 
         /* Custom cursor */
 
         const cursor = document.createElement('img');
 
         cursor.classList.add('custom-cursor');
-
         document.body.appendChild(cursor);
 
-
         heroSlides.forEach(slide => {
-
             slide.addEventListener('mouseenter', () => {
-
                 cursor.src = slide.dataset.cursor;
-
                 cursor.style.display = 'block';
-
             });
-
 
             slide.addEventListener('mousemove', (event) => {
-
                 cursor.style.left = `${event.clientX}px`;
-
                 cursor.style.top = `${event.clientY}px`;
-
             });
-
 
             slide.addEventListener('mouseleave', () => {
-
                 cursor.style.display = 'none';
-
             });
-
         });
-
     }
-
 }
 
 
@@ -122,64 +88,41 @@ if (heroCarousel) {
 
 const projectCards = document.querySelectorAll('.projects-page__card');
 
-
 if (projectCards.length > 0) {
 
     const projectDescriptions = [
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.'
     ];
-
 
     const projectModal = document.createElement('div');
 
     projectModal.classList.add('project-modal');
-
-
     projectModal.innerHTML = `
-
         <div class="project-modal__content">
-
             <button
                 class="project-modal__close"
                 aria-label="Cerrar proyecto"
             >
                 ×
             </button>
-
-
             <div class="project-modal__image-container">
-
                 <img
                     class="project-modal__image"
                     src=""
                     alt=""
                 >
-
             </div>
-
-
             <div class="project-modal__info">
-
                 <h2 class="project-modal__title"></h2>
-
                 <p class="project-modal__description"></p>
-
             </div>
-
         </div>
-
     `;
-
 
     document.body.appendChild(projectModal);
 
@@ -196,75 +139,42 @@ if (projectCards.length > 0) {
         projectModal.querySelector('.project-modal__close');
 
     projectCards.forEach((card, index) => {
-
         card.addEventListener('click', (event) => {
-
             event.preventDefault();
-
-
             const image = card.querySelector('img');
-
             const title = card.querySelector('h2');
-
-
             if (!image || !title) {
                 return;
             }
-
-
             modalImage.src = image.src;
-
             modalImage.alt = image.alt;
-
             modalTitle.textContent = title.textContent;
-
-
             modalDescription.textContent =
                 projectDescriptions[index] ||
                 'Descripción del proyecto.';
-
-
             projectModal.classList.add('is-open');
-
-
             document.body.style.overflow = 'hidden';
-
         });
-
     });
 
     closeButton.addEventListener('click', () => {
-
         projectModal.classList.remove('is-open');
-
         document.body.style.overflow = '';
-
     });
 
     projectModal.addEventListener('click', (event) => {
-
         if (event.target === projectModal) {
-
             projectModal.classList.remove('is-open');
-
             document.body.style.overflow = '';
-
         }
-
     });
 
     document.addEventListener('keydown', (event) => {
-
         if (event.key === 'Escape') {
-
             projectModal.classList.remove('is-open');
-
             document.body.style.overflow = '';
-
         }
-
     });
-
 }
 
 /*---menu---*/
@@ -272,16 +182,13 @@ if (projectCards.length > 0) {
 const header = document.querySelector('.header');
 
 if (header) {
-
     let lastScrollY = window.scrollY;
     let menuOpen = false;
 
     const menuButton = document.createElement('button');
 
     menuButton.className = 'menu-toggle';
-
     menuButton.type = 'button';
-
     menuButton.setAttribute(
         'aria-label',
         'Abrir menú'
@@ -299,25 +206,15 @@ if (header) {
     `;
 
     document.body.appendChild(menuButton);
-
     const menuOverlay = document.createElement('div');
-
     menuOverlay.className = 'menu-overlay';
-
     const navigation =
         header.querySelector('.header__nav');
-
     let menuLinks = '';
-
-
     if (navigation) {
-
         const links =
             navigation.querySelectorAll('a');
-
-
         links.forEach(link => {
-
             menuLinks += `
                 <li>
                     <a href="${link.getAttribute('href')}">
@@ -325,15 +222,11 @@ if (header) {
                     </a>
                 </li>
             `;
-
         });
-
     }
 
     menuOverlay.innerHTML = `
-
         <div class="menu-overlay__content">
-
             <button
                 type="button"
                 class="menu-close"
@@ -341,20 +234,13 @@ if (header) {
             >
                 ×
             </button>
-
-
             <nav class="menu-overlay__nav">
-
                 <ul>
                     ${menuLinks}
                 </ul>
-
             </nav>
-
         </div>
-
     `;
-
 
     document.body.appendChild(menuOverlay);
 
@@ -362,71 +248,51 @@ if (header) {
         menuOverlay.querySelector('.menu-close');
 
     function openMenu() {
-
         menuOpen = true;
-
         menuOverlay.classList.add(
             'menu-overlay--open'
         );
-
         menuButton.classList.add(
             'menu-toggle--active'
         );
-
         menuButton.setAttribute(
             'aria-expanded',
             'true'
         );
-
         menuButton.setAttribute(
             'aria-label',
             'Cerrar menú'
         );
-
         document.body.style.overflow = 'hidden';
-
     }
 
     function closeMenu() {
-
         menuOpen = false;
-
         menuOverlay.classList.remove(
             'menu-overlay--open'
         );
-
         menuButton.classList.remove(
             'menu-toggle--active'
         );
-
         menuButton.setAttribute(
             'aria-expanded',
             'false'
         );
-
         menuButton.setAttribute(
             'aria-label',
             'Abrir menú'
         );
-
         document.body.style.overflow = '';
-
     }
 
     menuButton.addEventListener(
         'click',
         () => {
-
             if (menuOpen) {
-
                 closeMenu();
-
             } else {
-
                 openMenu();
-
             }
-
         }
     );
 
@@ -434,120 +300,87 @@ if (header) {
     menuClose.addEventListener(
         'click',
         (event) => {
-
             event.preventDefault();
-
             event.stopPropagation();
-
             closeMenu();
-
         }
     );
 
     menuOverlay.addEventListener(
         'click',
         (event) => {
-
             if (
                 event.target === menuOverlay
             ) {
-
                 closeMenu();
-
             }
-
         }
     );
 
     const overlayLinks =
         menuOverlay.querySelectorAll('a');
-
-
     overlayLinks.forEach(link => {
-
         link.addEventListener(
             'click',
             () => {
-
                 closeMenu();
-
             }
         );
-
     });
 
     window.addEventListener(
         'scroll',
         () => {
-
             const currentScrollY =
                 window.scrollY;
-
             if (currentScrollY <= 20) {
-
                 header.classList.remove(
                     'header--hidden'
                 );
-
                 menuButton.classList.remove(
                     'menu-toggle--visible'
                 );
-
                 lastScrollY =
                     currentScrollY;
-
                 return;
-
             }
-
             if (
                 currentScrollY > lastScrollY &&
                 !menuOpen
             ) {
-
                 header.classList.add(
                     'header--hidden'
                 );
                 menuButton.classList.add(
                     'menu-toggle--visible'
                 );
-
             }
             if (
                 currentScrollY < lastScrollY &&
                 !menuOpen
             ) {
-
                 header.classList.add(
                     'header--hidden'
                 );
-
                 menuButton.classList.add(
                     'menu-toggle--visible'
                 );
-
             }
-
-
             lastScrollY =
                 currentScrollY;
-
         }
     );
+    
     document.addEventListener(
         'keydown',
         (event) => {
-
             if (
                 event.key === 'Escape' &&
                 menuOpen
             ) {
-
                 closeMenu();
-
             }
-
         }
     );
-
 }
+

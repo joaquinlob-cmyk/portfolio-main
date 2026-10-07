@@ -7,20 +7,25 @@
     --color-grey: #DADADA;
 
     /* Fonts */
-    --font-xl: 700 clamp(6.875rem, 5vw, 7.5rem) "Roboto Condensed", sans-serif;
-    --font-lg: 400 clamp(1.5rem, 5vw, 2rem) "Roboto Condensed", sans-serif;
-    --font-md: 400 clamp(1.1875rem, 5vw, 1.5rem) "Roboto Condensed", sans-serif;
-    --font-sm: 400 clamp(.0625rem, 5vw, 1.1875rem) "Roboto Condensed", sans-serif;
-    --font-xs: 400 clamp(.875rem, 5vw, 1rem) "Roboto Condensed", sans-serif;
 
-    --font-xl-italic: italic 700 clamp(3rem, 5vw, 4rem) "Roboto Condensed", sans-serif;
-    --font-lg-italic: italic 400 clamp(1.5rem, 5vw, 2rem) "Roboto Condensed", sans-serif;
-    --font-md-italic: italic 400 clamp(1.1875rem, 5vw, 1.5rem) "Roboto Condensed", sans-serif;
-    --font-sm-italic: italic 400 clamp(.0625rem, 5vw, 1.1875rem) "Roboto Condensed", sans-serif;
-    --font-xs-italic: italic 400 clamp(.875rem, 5vw, 1rem) "Roboto Condensed", sans-serif;
+    --font-hero: 400 clamp(12rem, 5vw, 13rem) "Bebas Neue", sans-serif;
 
-    --font-body: 400 clamp(1.1875rem, 5vw, 1.5rem) "Roboto Condensed", sans-serif;
-    --font-link: 400 clamp(1.1875rem, 5vw, 1.5rem) "Roboto Condensed", sans-serif;
+
+    --font-xl: 400 clamp(5rem, 5vw, 5.625rem) "Bebas Neue", sans-serif;
+    --font-lg: 400 clamp(1.5rem, 5vw, 2rem) "Bebas Neue", sans-serif;
+    --font-md: 400 clamp(1.1875rem, 5vw, 1.5rem) "Bebas Neue", sans-serif;
+    --font-sm: 400 clamp(.0625rem, 5vw, 1.1875rem) "Bebas Neue", sans-serif;
+    --font-xs: 400 clamp(.875rem, 5vw, 1rem) "Bebas Neue", sans-serif;
+
+
+    --font-xl-saira: 400 clamp(3rem, 5vw, 4rem) "Saira Condensed", sans-serif;
+    --font-lg-saira: 400 clamp(1.5rem, 5vw, 2rem) "Saira Condensed", sans-serif;
+    --font-md-saira: 400 clamp(1.1875rem, 5vw, 1.5rem) "Saira Condensed", sans-serif;
+    --font-sm-saira: 400 clamp(.0625rem, 5vw, 1.1875rem) "Saira Condensed", sans-serif;
+    --font-xs-saira: 400 clamp(.875rem, 5vw, 1rem) "Saira Condensed", sans-serif;
+
+    --font-body: 400 clamp(1.1875rem, 5vw, 1.5rem) "Saira Condensed", sans-serif;
+    --font-link: 400 clamp(1.1875rem, 5vw, 1.5rem) "Bebas Neue", sans-serif;
 
     /* Sizes */
     --size-icon-mid: 1.5rem;
@@ -71,7 +76,6 @@ img {
 a {
     text-decoration: none;
     color: inherit;
-    font: var(--font-link);
 }
 
 ul,
@@ -93,26 +97,14 @@ h2,
     font: var(--font-lg);
 }
 
-.title-lg-italic {
-    font: var(--font-lg-italic)
-}
-
 h3,
 .title-md {
     font: var(--font-md);
 }
 
-.title-md-italic {
-    font: var(--font-md-italic);
-}
-
 h4,
 .title-sm {
     font: var(--font-sm);
-}
-
-.title-sm-italic {
-    font: var(--font-sm-italic);
 }
 
 
@@ -182,6 +174,7 @@ label:not([for="acceptance"]) {
 
 
 .btn {
+    font: var(--font-md);
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: none;
@@ -240,6 +233,7 @@ header {
 
 header a {
     color: var(--color-light);
+    font: var(--font-md-saira);
 }
 
 .header__content {
@@ -276,8 +270,7 @@ nav {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--color-dark);
-
+    
     z-index: 0;
     position: sticky;   
     top: 0; 
@@ -323,16 +316,15 @@ nav {
 
     & h1 {
     color: var(--color-light);
-    font: var(--font-xl);
+    font: var(--font-hero);
     line-height: 0.82;
     letter-spacing: -0.06em;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     }
 
     & h2 {
-    margin-top: var(--spacing-md);
     color: var(--color-light);
-    font: var(--font-lg);
+    font: var(--font-lg-saira);
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
     }
 }
@@ -345,6 +337,12 @@ nav {
 }
 
 /* Pojects */
+
+.marquee {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    font: var(--font-xl-saira);
+}
 
 .projects {
     background-color: var(--color-dark);
@@ -374,31 +372,15 @@ nav {
 }
 
 .project__card-image {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
     
     & img {
+    aspect-ratio: 1 / 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0;
     }
 
-    & h2 {
-    font: var(--font-xs);
-    line-height: 1;
-    }
-
-    & p {
-    font: var(--font-xs);
-    line-height: 1;
-    }
-    & span {
-    font: var(--font-xs);
-    line-height: 1;
-    white-space: nowrap;
-    }
 }
 
 .project__card-info {
@@ -407,6 +389,18 @@ nav {
     align-items: flex-start;
     gap: var(--spacing-md);
     padding-top: var(--spacing-sm);
+
+        & h2 {
+    font: var(--font-xs);
+    }
+
+    & p {
+    font: var(--font-xs-saira);
+    }
+    & span {
+    font: var(--font-xs-saira);
+    white-space: nowrap;
+    }
 }
 
 /* Projects */
@@ -467,7 +461,7 @@ nav {
     margin: 0 auto;
 
     & p {
-    font: var(--font-md);
+    font: var(--font-sm-saira);
 
     }
 }
@@ -495,7 +489,7 @@ nav {
 
 .about__education-institution p,
 .about__education-item time {
-    font: var(--font-sm);
+    font: var(--font-sm-saira);
 }
 
 .about__education-item time {
@@ -533,7 +527,7 @@ nav {
 }
 
 .contact__details {
-    font: var(--font-sm);
+    font: var(--font-sm-saira);
 }
 
 .contact__details p {
@@ -563,8 +557,7 @@ nav {
     display: none;
     }
 
-    & input,
-     textarea {
+    & input, textarea {
     width: 100%;
     padding: var(--spacing-xs) 0;
     border: none;
@@ -572,7 +565,7 @@ nav {
     border-radius: 0;
     background-color: transparent;
     color: var(--color-light);
-    font: var(--font-sm);
+    font: var(--font-sm-saira);
     outline: none;
     }
 
@@ -590,7 +583,7 @@ nav {
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
     color: var(--color-light);
-    font: var(--font-xs);
+    font: var(--font-xs-saira);
 }
 
 .contact-page__form-acceptance input {
@@ -599,7 +592,7 @@ nav {
 
 .contact__form .btn {
     width: 10rem;
-   
+
 }
 
 
@@ -620,7 +613,7 @@ nav {
     padding: var(--spacing-lg) 0 var(--spacing-xxl);
 
     & p, a {
-    font: var(--font-sm);
+    font: var(--font-xs-saira);
     color: var(--color-light);
 
         &  a {
