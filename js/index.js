@@ -218,7 +218,7 @@ if (header) {
             menuLinks += `
                 <li>
                     <a href="${link.getAttribute('href')}">
-                        ${link.textContent.trim()}
+            <span>${link.textContent.trim()}</span>
                     </a>
                 </li>
             `;
@@ -250,10 +250,10 @@ if (header) {
     function openMenu() {
         menuOpen = true;
         menuOverlay.classList.add(
-            'menu-overlay--open'
+            'menu-overlay__open'
         );
         menuButton.classList.add(
-            'menu-toggle--active'
+            'menu-toggle__active'
         );
         menuButton.setAttribute(
             'aria-expanded',
@@ -269,10 +269,10 @@ if (header) {
     function closeMenu() {
         menuOpen = false;
         menuOverlay.classList.remove(
-            'menu-overlay--open'
+            'menu-overlay__open'
         );
         menuButton.classList.remove(
-            'menu-toggle--active'
+            'menu-toggle__active'
         );
         menuButton.setAttribute(
             'aria-expanded',
@@ -335,10 +335,10 @@ if (header) {
                 window.scrollY;
             if (currentScrollY <= 20) {
                 header.classList.remove(
-                    'header--hidden'
+                    'header__hidden'
                 );
                 menuButton.classList.remove(
-                    'menu-toggle--visible'
+                    'menu-toggle__visible'
                 );
                 lastScrollY =
                     currentScrollY;
@@ -349,10 +349,10 @@ if (header) {
                 !menuOpen
             ) {
                 header.classList.add(
-                    'header--hidden'
+                    'header__hidden'
                 );
                 menuButton.classList.add(
-                    'menu-toggle--visible'
+                    'menu-toggle__visible'
                 );
             }
             if (
@@ -360,10 +360,10 @@ if (header) {
                 !menuOpen
             ) {
                 header.classList.add(
-                    'header--hidden'
+                    'header__hidden'
                 );
                 menuButton.classList.add(
-                    'menu-toggle--visible'
+                    'menu-toggle__visible'
                 );
             }
             lastScrollY =

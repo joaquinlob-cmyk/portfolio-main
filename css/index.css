@@ -90,10 +90,6 @@ h1,
     font: var(--font-xl);
 }
 
-.title-xl-italic {
-    font: var(--font-xl-italic) 
-}
-
 h2,
 .title-lg {
     font: var(--font-lg);
@@ -231,21 +227,18 @@ header {
     isolation: isolate;
     background-color: var(--color-dark);
     color: var(--color-light);
-}
 
-header a {
-    color: var(--color-light);
-    font: var(--font-md-saira);
+    & a {
+        color: var(--color-light);
+        font: var(--font-md-saira);
+    }
 }
 
 .header__content {
-    max-width: 100%;
     height: 4rem;
-    padding: var(--spacing-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin:  auto;
     gap: 7rem;
 
 }
@@ -258,9 +251,6 @@ nav {
         & li {}
     }
 
-    /*@media (max-width: 900px) {
-        display: none;
-    }*/
 }
 /* Header */ 
 
@@ -354,7 +344,7 @@ nav {
 .marquee__block {
     display: flex;
     width: max-content;
-    animation: marquee 40s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .marquee__text {
@@ -523,6 +513,11 @@ nav {
     gap: var(--spacing-lg);
     padding: var(--spacing-md) 0;
     border-top: 1px solid var(--color-light);
+
+    & time {
+        white-space: nowrap;
+        align-self: end;
+    }
 }
 
 .about__education-institution h3 {
@@ -534,9 +529,7 @@ nav {
     font: var(--font-sm-saira);
 }
 
-.about__education-item time {
-    white-space: nowrap;
-}
+
 
 /* About */
 
@@ -570,10 +563,11 @@ nav {
 
 .contact__details {
     font: var(--font-sm-saira);
-}
 
-.contact__details p {
+    & p {
     margin-bottom: var(--spacing-sm);
+    }
+
 }
 
 .contact__form {
@@ -993,7 +987,7 @@ nav {
         opacity 0.45s ease;
 }
 
-.header.header--hidden {
+.header.header__hidden {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
@@ -1029,7 +1023,7 @@ nav {
 }
 
 
-.menu-toggle--visible {
+.menu-toggle__visible {
 
     opacity: 1;
     visibility: visible;
@@ -1050,7 +1044,7 @@ nav {
 
 }
 
-.menu-toggle--active span:nth-child(1) {
+.menu-toggle__active span:nth-child(1) {
     transform:
         translateY(0.45rem)
         rotate(45deg);
@@ -1058,12 +1052,12 @@ nav {
 }
 
 
-.menu-toggle--active span:nth-child(2) {
+.menu-toggle__active span:nth-child(2) {
     opacity: 0;
 }
 
 
-.menu-toggle--active span:nth-child(3) {
+.menu-toggle__active span:nth-child(3) {
     transform:
         translateY(-0.45rem)
         rotate(-45deg);
@@ -1090,11 +1084,12 @@ nav {
 
 }
 
-.menu-overlay--open {
+.menu-overlay__open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
+    
 
 }
 .menu-overlay__content {
@@ -1106,6 +1101,80 @@ nav {
     justify-content: center;
     padding: var(--spacing-lg);
 
+}
+
+.menu-overlay__nav {
+    width: 100%;
+
+    & ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-md);
+        padding: 0;
+        margin: 0;
+    }
+
+    & li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    & a {
+        position: relative;
+        display: block;
+        width: 15%;
+        box-sizing: border-box;
+
+        color: var(--color-light);
+        font: var(--font-xl);
+        line-height: 1.1;
+        text-align: left;
+
+        padding: 0.2rem 0;
+
+        z-index: 1;
+
+        transition:
+            color 0.3s ease;
+    }
+
+    & a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+
+        width: 100vw;
+
+        transform: translateX(-50%);
+
+        background-color: transparent;
+
+        z-index: -1;
+
+        transition:
+            background-color 0.3s ease;
+    }
+
+
+    & a:hover::before {
+        background-color: var(--color-red);
+    }
+
+    & a span {
+        display: inline-block;
+
+        transition:
+            transform 0.3s ease;
+    }
+
+    & a:hover span {
+        transform: translateX(15px);
+    }
 }
 
 .menu-close {
@@ -1121,37 +1190,13 @@ nav {
     font-size: 2.5rem;
     line-height: 1;
     cursor: pointer;
+    
 
 }
 
-.menu-overlay__nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
 
-}
 
-.menu-overlay__nav a {
-    position: relative;
-    display: inline-block;
-    color: var(--color-light);
-    font: var(--font-xl);
-    line-height: 1.1;
-    letter-spacing: -0.05em;
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-
-}
-
-.menu-overlay__nav a:hover {
-    color: var(--color-red);
-    transform: translateX(10px);
-
-}
-
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
 
     .menu-toggle {
         top: var(--spacing-sm);
