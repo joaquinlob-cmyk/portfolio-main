@@ -1322,7 +1322,7 @@ nav {
         --spacing-lg: 1.5rem;
         --spacing-md: .875rem;
     }
-
+    
     .section,
     .section-0 {
         padding-left: var(--spacing-sm);
@@ -1420,7 +1420,6 @@ nav {
         padding-left: 0;
         padding-right: 0;
     }
-
 
     /* Contact */
 
@@ -1620,8 +1619,23 @@ nav {
     }
 
     .menu-overlay__nav a {
-        width: 70%;
+    width: 70%;
+    max-width: 22rem;
     }
+}
+
+/* Mobile viewport safety */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+    max-width: 100%;
 }
 
 /* -------------------------------Responsive--------------------------------- */
