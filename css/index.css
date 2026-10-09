@@ -1639,5 +1639,25 @@ body {
     }
 }
 
+@media (max-width: 48rem) {
+    .hero {
+        position: sticky;
+        top: 0;
+        height: 100svh;
+        z-index: 0;
+    }
+
+    .full-frame {
+        position: relative;
+        z-index: 1;
+        background-color: var(--color-dark);
+    }
+
+    .marquee {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 /* -------------------------------Responsive--------------------------------- */
 
