@@ -631,7 +631,6 @@ nav {
 
 }
 
-
 /* Contact */
 
 /* Footer */
@@ -1209,7 +1208,24 @@ nav {
 
 /* -------------------------------Responsive--------------------------------- */
 
+/* safe */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+    max-width: 100%;
+}
+
+/* safe */
+
 /* Tablet */
+
 @media (max-width: 64rem) {
 
     .section,
@@ -1312,8 +1328,8 @@ nav {
     }
 }
 
-
 /* Mobile */
+
 @media (max-width: 48rem) {
 
     :root {
@@ -1584,8 +1600,8 @@ nav {
     }
 }
 
-
 /* Small mobile */
+
 @media (max-width: 30rem) {
 
     .hero__content h1 {
@@ -1622,20 +1638,6 @@ nav {
     width: 70%;
     max-width: 22rem;
     }
-}
-
-/* Mobile viewport safety */
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img,
-video,
-svg,
-canvas {
-    max-width: 100%;
 }
 
 /* -------------------------------Responsive--------------------------------- */
