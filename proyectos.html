@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyectos — Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="css/index.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css">
     <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
-    <script>new Lenis({ autoRaf: true, autoToggle: true, anchors: true, allowNestedScroll: true, naiveDimensions: true, stopInertiaOnNavigate: true })</script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
 
     <script defer src="js/index.js"></script>
 
@@ -45,6 +47,7 @@
 
 </head>
 
+
 <body>
 
     <!--/ Header-->
@@ -71,42 +74,46 @@
         <section class="projects-page">
 
             <div class="projects-page__grid block--lg">
-
+                <h1>Proyectos</h1>
                 <a href="#" class="projects-page__card">
-                    <img src="media/image-1.avif" alt="proyecto__01">
+                    <picture>
+                        <source srcset="media/image-1.avif" type="image/avif">
+                        <source srcset="media/image-1.webp" type="image/webp">
+                        <img src="media/image-1.jpg" alt="Proyecto 1" loading="lazy" decoding="async">
+                    </picture>
                     <div class="projects-page__overlay">
-                        <h2>proyecto__01</h2>
+                        <h2>Meditation__attempt</h2>
                     </div>
                 </a>
 
                 <a href="#" class="projects-page__card">
-                    <img src="media/image-2.avif" alt="Proyecto__02">
+                    <picture>
+                        <source srcset="media/image-2.avif" type="image/avif">
+                        <source srcset="media/image-2.webp" type="image/webp">
+                        <img src="media/image-2.jpg" alt="Proyecto 2" loading="lazy" decoding="async">
+                    </picture>
                     <div class="projects-page__overlay">
-                        <h2>Proyecto__02</h2>
+                        <h2>Nokia_3310__ads</h2>
                     </div>
                 </a>
                 <a href="#" class="projects-page__card">
-                    <img src="media/image-3.avif" alt="Proyecto__03">
+                    <picture>
+                        <source srcset="media/image-3.avif" type="image/avif">
+                        <source srcset="media/image-3.webp" type="image/webp">
+                        <img src="media/image-3.jpg" alt="Proyecto 3" loading="lazy" decoding="async">
+                    </picture>
                     <div class="projects-page__overlay">
-                        <h2>Proyecto__03</h2>
+                        <h2>MATHROCK__BOOK</h2>
                     </div>
                 </a>
                 <a href="#" class="projects-page__card">
-                    <img src="media/image-4.avif" alt="Proyecto__04">
+                    <picture>
+                        <source srcset="media/image-wip.avif" type="image/avif">
+                        <source srcset="media/image-wip.webp" type="image/webp">
+                        <img src="media/image-wip.jpg" alt="Proyecto 3" loading="lazy" decoding="async">
+                    </picture>
                     <div class="projects-page__overlay">
-                        <h2>Proyecto__04</h2>
-                    </div>
-                </a>
-                <a href="#" class="projects-page__card">
-                    <img src="media/image-5.avif" alt="Proyecto__05">
-                    <div class="projects-page__overlay">
-                        <h2>Proyecto__05</h2>
-                    </div>
-                </a>
-                <a href="#" class="projects-page__card">
-                    <img src="media/image-6.avif" alt="Proyecto__06">
-                    <div class="projects-page__overlay">
-                        <h2>Proyecto__06</h2>
+                        <h2>Work in progress</h2>
                     </div>
                 </a>
             </div>
@@ -133,9 +140,12 @@
             </div>
             <div class="footer__links">
                 <div class="footer__social">
-                    <a href="#">Instagram <span>↗</span></a>
-                    <a href="#">Behance <span>↗</span></a>
-                    <a href="#">LinkedIn <span>↗</span></a>
+                    <a href="https://www.instagram.com/lobosmja?srtk=MTg1amUyZzJnNGV3YQ%3D%3D&utm_source=qr">Instagram
+                        <span><i class="ri-arrow-right-up-long-line"></i></span></a>
+                    <a href="https://www.behance.net/gallery/250842169/PORTAFOLIO-2026-JOAQUIN-LOBOS">Behance
+                        <span><i class="ri-arrow-right-up-long-line"></i></span></a>
+                    <a href="https://www.linkedin.com/in/joaqu%C3%ADn-andr%C3%A9s-lobos-molina-a9803b378/">LinkedIn
+                        <span><i class="ri-arrow-right-up-long-line"></i></span></a>
                 </div>
                 <div class="footer__legal">
                     <a href="#">Aviso legal</a>

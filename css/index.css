@@ -206,17 +206,6 @@ label:not([for="acceptance"]) {
         border: 1px solid var(--color-red);
     }
 
-    @media (max-width: 640px) {
-        width: 100%;
-
-        &.btn--center {
-            display: block;
-            width: fit-content;
-            margin-inline: auto;
-        }
-    }
-
-
 }
 
 /* Header */
@@ -242,20 +231,17 @@ header {
     align-items: center;
     gap: 7rem;
 
-}
-
-nav {
-    & ul {
+    & nav {
+        & ul {
         display: flex;
         gap: var(--spacing-lg);
+        }
 
-        & li {}
     }
 
 }
 
 /* Header */
-
 
 /* Hero */
 
@@ -382,8 +368,6 @@ nav {
 
 }
 
-.projects__block {}
-
 .projects__title {
     font: var(--font-xl);
     color: var(--color-light);
@@ -396,8 +380,6 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
-
-.project__card {}
 
 .project__card-image {
 
@@ -533,8 +515,6 @@ nav {
 /* Contact */
 
 .contact {
-    gap: var(--spacing-xxl);
-    padding: var(--spacing-xxl) var(--spacing-md);
     background-color: var(--color-dark);
     color: var(--color-light);
 }
@@ -550,31 +530,39 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    & h2 {
+    font: var(--font-xl);
+    line-height: 0.85;
+    }
+}
+.contact__details-nav {
+
+    & ul {
+    display: flex;
+    flex-direction: column;
+    font: var(--font-sm-saira);
+    }
+
+    & p {
+        font: var(--font-sm-saira);
+    }
+
 }
 
 .contact__details-mobile {
     display: none;
     font: var(--font-sm-saira);
 
-    & p {
-        margin-bottom: var(--spacing-sm);
-    }
-}
-
-.contact__info h2 {
-    font: var(--font-xl);
-    line-height: 0.85;
-}
-
-
-
-.contact__details {
+    & ul {
+    display: flex;
+    flex-direction: column;
     font: var(--font-sm-saira);
-
-    & p {
+    }
+    
+    & a {
         margin-bottom: var(--spacing-sm);
     }
-
 }
 
 .contact__form {
@@ -642,8 +630,6 @@ nav {
 
 /* Footer */
 
-.footer {}
-
 .footer__block {
     border-top: 1px solid var(--color-light);
 
@@ -708,7 +694,7 @@ nav {
 
 .contact-page {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -716,17 +702,16 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
 
 
 }
 
 .contact-page__info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 50rem;
 
 }
 
@@ -747,6 +732,10 @@ nav {
 .projects-page__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    & h1 {
+        display: none;
+    }
 }
 
 .projects-page__card {
@@ -873,8 +862,7 @@ nav {
 
 .custom-cursor {
     position: fixed;
-    width: 15rem;
-    height: 15rem;
+    width: clamp( 11rem, 12rem, 13rem);
     object-fit: contain;
     pointer-events: none;
     z-index: 2;

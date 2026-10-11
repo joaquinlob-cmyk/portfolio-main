@@ -21,13 +21,8 @@ if (heroCarousel) {
             image: './media/image-3.avif',
             href: './proyectos.html',
             cursor: './media/gif-3.gif'
-        },
-        {
-            nombre: 'Proyecto 4',
-            image: './media/image-4.avif',
-            href: './proyectos.html',
-            cursor: './media/gif-4.gif'
         }
+
     ];
 
     let count = 0;
@@ -91,10 +86,10 @@ const projectCards = document.querySelectorAll('.projects-page__card');
 if (projectCards.length > 0) {
 
     const projectDescriptions = [
-        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
-        'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
+        'Video experimental que explora la meditación frente al caos urbano y mental. A través del motion graphic, glitch visuales y rupturas del entorno. La pieza construye una narrativa que transita entre la calma, la tensión y el colapso emocional.',
+        'Animación 3D desarrollada en Cinema 4D que enfrenta al iccónico Nokio 3310 contra el Mjolnir para poner a prueba su resistencia "indestructible". A través de simulaciones de fractura, iluminación cinematográfica y modelado de objetos, la pieza contruye una escena épica donde todo colapsa ante el Nokia',
+        'Proyecto editorial inspirado en el Math Rock, donde la complejidad rítmica del género se traduce en composiciones dinánimcas, rensión tipográfica y una narrativa visual en la que las imagenes predominan sobre el texto.',
+        'Ten paciencia por favor...',
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.',
         'Explicar brevemente el concepto, el proceso y las características principales del proyecto.'
     ];
